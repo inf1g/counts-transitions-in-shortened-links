@@ -10,7 +10,7 @@
 ```bash
 pip install -r requirements.txt
 ```
-3. Запустите скрипт 'get_weather.py'
+3. Запустите скрипт 'counts_transitions_in_shortened_links.py'
 ```bash
 python counts_transitions_in_shortened_links.py
 ```
