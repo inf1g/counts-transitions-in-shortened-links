@@ -11,15 +11,25 @@ def configure_keys(token):
     return key
 
 
-def is_shorten_link(url):
-    parsed = urlparse(url)
-    if parsed.scheme == 'https' or parsed.scheme == 'http':
-        if urlparse(url).netloc == "vk.cc":
-            count_clicks(url)
+def input_check():
+    while True:
+        user_input_check = input("Введите URL-адрес: ")
+        parsed = urlparse(user_input_check)
+        if parsed.scheme != '':
+            if parsed.netloc != '':
+                break
+            else:
+                print("Введите полный URL как на примере: https://ya.ru")
         else:
-            shorten_link(url)
+            print("Введите полный URL как на примере: https://ya.ru")
+    return user_input_check
+
+
+def is_shorten_link(url):
+    if urlparse(url).netloc == "vk.cc":
+        return True
     else:
-        print("Введите полный URL как на примере: https://ya.ru")
+        return False
 
 
 def shorten_link(link):
@@ -28,7 +38,6 @@ def shorten_link(link):
     response = requests.get(f"{url}", params=payload)
     try:
         response.raise_for_status()
-        print(f'Сокращенная ссылка: {response.json()['response']['short_url']}')
         return response.json()['response']['short_url']
     except requests.exceptions.HTTPError:
         print(f'HTTP Error')
@@ -46,7 +55,7 @@ def count_clicks(short_url):
     response = requests.get(f"{url}", params=payload)
     try:
         response.raise_for_status()
-        print(f'Количество кликов по ссылке: {response.json()["response"]["stats"][0]["views"]}')
+        return response.json()["response"]["stats"][0]["views"]
     except requests.exceptions.HTTPError:
         print(f'HTTP Error')
     except Exception as error:
@@ -54,6 +63,9 @@ def count_clicks(short_url):
 
 
 if __name__ == '__main__':
-    user_input = input("Введите URL-адрес, который вы хотите сократить: ")
     vk_api_key = configure_keys("VK_API_KEY")
-    is_shorten_link(user_input)
+    user_input = input_check()
+    if is_shorten_link(user_input) is True:
+        print(f'Количество кликов по ссылке: {count_clicks(user_input)}')
+    elif is_shorten_link(user_input) is False:
+        print(f'Сокращенная ссылка: {shorten_link(user_input)}')
