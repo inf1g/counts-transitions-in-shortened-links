@@ -57,7 +57,7 @@ def count_clicks(short_url):
         response.raise_for_status()
         return response.json()["response"]["stats"][0]["views"]
     except requests.exceptions.HTTPError:
-        print(f'HTTP Error')
+        print(f'HTTPError')
     except Exception as error:
         print(f"{type(error)} {error}")
 
