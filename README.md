@@ -10,11 +10,11 @@
 ```bash
 pip install -r requirements.txt
 ```
-3. Укажите сервисный токен приложения API VK в переменную:
+3. Создайте файл `.env` и пропишите имя и значение этой переменной в этот файл как на примере ниже, замените `0123456789abcdefgh` на свой сервисный ключ – “токен” API VK.
 ```bash
-vk_api_token
+VK_API_KEY=0123456789abcdefgh
 ```
-### Если его нет:
+### Как его получить:
 - Социальная сеть ВК — [зарегистрируйтесь](https://vk.com/)
 - Получите [Сервисный токен приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/tokens/service-token)
 - [Создание приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/create-application)
@@ -23,9 +23,9 @@ vk_api_token
 - Базовый домен - example.com
 - Доверенный Redirect URL - https://example.com
 ---
-4. Запустите скрипт 'counts_transitions_in_shortened_links.py'
+4. Запустите скрипт 'link_shortener.py'
 ```bash
-python counts_transitions_in_shortened_links.py
+python link_shortener.py.py
 ```
 
 ## Создано с помощью 
