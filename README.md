@@ -10,7 +10,20 @@
 ```bash
 pip install -r requirements.txt
 ```
-3. Запустите скрипт 'counts_transitions_in_shortened_links.py'
+3. Укажите сервисный токен приложения API VK в переменную:
+```bash
+vk_api_token
+```
+### Если его нет:
+- Социальная сеть ВК — [зарегистрируйтесь](https://vk.com/)
+- Получите [Сервисный токен приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/tokens/service-token)
+- [Создание приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/create-application)
+
+- Тип приложения - Web
+- Базовый домен - example.com
+- Доверенный Redirect URL - https://example.com
+---
+4. Запустите скрипт 'counts_transitions_in_shortened_links.py'
 ```bash
 python counts_transitions_in_shortened_links.py
 ```
