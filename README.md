@@ -25,7 +25,7 @@ VK_API_KEY=0123456789abcdefgh
 ---
 4. Запустите скрипт 'link_shortener.py'
 ```bash
-python link_shortener.py.py
+python link_shortener.py
 ```
 
 ## Создано с помощью 
