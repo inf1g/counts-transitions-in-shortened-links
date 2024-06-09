@@ -11,8 +11,8 @@ def configure_keys(token):
 
 
 def is_shorten_link(url):
-    result = urlparse(url).netloc == "vk.cc"
-    return result
+    if urlparse(url).netloc == "vk.cc":
+        return True
 
 
 def shorten_link(link, vk_api_key):
@@ -41,7 +41,7 @@ def main():
         if not is_shorten_link(user_input):
             print(f'Сокращенная ссылка: {shorten_link(user_input, vk_api_token)}')
     except requests.exceptions.HTTPError:
-        print(f'HTTP Error')
+        return requests.exceptions.HTTPError
 
 
 if __name__ == '__main__':
