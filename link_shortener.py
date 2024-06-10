@@ -11,8 +11,7 @@ def configure_keys(token):
 
 
 def is_shorten_link(url):
-    if urlparse(url).netloc == "vk.cc":
-        return True
+    return urlparse(url).netloc == "vk.cc"
 
 
 def shorten_link(link, vk_api_key):
