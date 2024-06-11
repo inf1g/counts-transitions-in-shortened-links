@@ -5,12 +5,13 @@
 
 ## Установка
 
-1. Клонируйте репозиторий с github
-2. Установите зависимости 
+1. Для запуска должен быть установлен [Python 3](https://www.python.org/downloads/release/python-3124/)
+2. Клонируйте репозиторий с github
+3. Установите зависимости 
 ```bash
 pip install -r requirements.txt
 ```
-3. Пропишите в файл `.env` имя и значение этой переменной как на примере ниже, замените `0123456789abcdefgh` на свой сервисный ключ – “токен” API VK.
+4. Пропишите в файл `.env` имя и значение этой переменной как на примере ниже, замените `0123456789abcdefgh` на свой сервисный ключ – “токен” API VK.
 ```bash
 VK_API_KEY=0123456789abcdefgh
 ```
@@ -23,7 +24,7 @@ VK_API_KEY=0123456789abcdefgh
 - Базовый домен - example.com
 - Доверенный Redirect URL - https://example.com
 ---
-4. Запустите скрипт 'link_shortener.py'
+5. Запустите скрипт 'link_shortener.py'
 ```bash
 python link_shortener.py
 ```
