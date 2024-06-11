@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ```bash
 VK_API_KEY=0123456789abcdefgh
 ```
-### Как его получить:
+### Как его получить: 
 - Социальная сеть ВК — [зарегистрируйтесь](https://vk.com/)
 - Получите [Сервисный токен приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/tokens/service-token)
 - [Создание приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/create-application)
