@@ -40,7 +40,7 @@ def main():
         if not is_shorten_link(user_input):
             print(f'Сокращенная ссылка: {shorten_link(user_input, vk_api_token)}')
     except requests.exceptions.HTTPError:
-        return requests.exceptions.HTTPError
+        print('Неверная ссылка')
 
 
 if __name__ == '__main__':
